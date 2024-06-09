@@ -1,15 +1,12 @@
-const { mongoose } = require("mongoose");
+const mongoose = require("mongoose");
+const updateDB = require("./mongoose/update");
+const deleteDB = require("./mongoose/delete");
+const findDB = require("./mongoose/find");
 
 const main = async () => {
-  await mongoose.connect("mongodb://127.0.0.1:27017/ecom");
-  const productSchema = new mongoose.Schema({
-    product_name: String,
-  });
-  const Product = mongoose.model("products", productSchema);
-  const data = new Product({ product_name: "New" });
-  //   const result = await data.save();
-
-  console.log(data);
+  //   await deleteDB();
+  //   await updateDB();
+  await findDB();
 };
 
 main();
